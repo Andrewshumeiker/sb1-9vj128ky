@@ -39,3 +39,20 @@ INSERT INTO medication_batches (
 ) VALUES (
   uuid_generate_v4(), :medication_id, :quantity, :expiration_date, :hospital_id
 );
+### Consulta de lotes por vencimiento
+SELECT * FROM medication_batches
+WHERE expiration_date <= CURRENT_DATE + INTERVAL '30 days'
+ORDER BY expiration_date ASC;
+### Validar antes de usar el medicamento
+def validar_lote_para_uso(lote):
+    if lote.expiration_date < date.today():
+        raise ValueError("El medicamento está vencido y no puede ser administrado.")
+🛠️ Tecnologías Utilizadas
+Backend: Python (Django) o Node.js (Express)
+
+Base de Datos: PostgreSQL (con extensión uuid-ossp)
+
+ORM Recomendado: Django ORM o Sequelize
+
+Interfaz Web: Vue.js o React (para el panel de control de inventario)
+
