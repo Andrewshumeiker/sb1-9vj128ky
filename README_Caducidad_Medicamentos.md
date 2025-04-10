@@ -69,17 +69,6 @@ def validar_lote_para_uso(lote):
 
 ---
 
-## 🧪 Pruebas Unitarias (Resumen)
-
-| Caso de Prueba                         | Resultado Esperado                          |
-|----------------------------------------|---------------------------------------------|
-| Registrar lote con fecha válida        | Registro exitoso                            |
-| Intentar registrar lote sin fecha      | Error de validación                         |
-| Consultar medicamentos próximos a vencer | Lista de lotes con alerta (ordenados)     |
-| Usar medicamento vencido               | Operación bloqueada con error controlado    |
-
----
-
 ## 📌 Notas
 
 - Todos los lotes deben tener fecha de vencimiento al momento del ingreso.  
